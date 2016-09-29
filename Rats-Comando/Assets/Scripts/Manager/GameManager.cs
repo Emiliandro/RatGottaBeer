@@ -34,7 +34,9 @@ public class GameManager : MonoBehaviour {
 
 		boardScript = GetComponent<BoardManager>();
 		MainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-		isGameRoad = false;
+        panelGameOver = GameObject.FindGameObjectWithTag("Canvas");
+
+        isGameRoad = false;
 
 		//Chama a inicializacao do primeiro level
 		InitGame();
@@ -68,7 +70,7 @@ public class GameManager : MonoBehaviour {
 	public void GameOver(){
 		panelGameOver.SetActive(true);
 		levelOverGamer = GameObject.Find("LevelOverGamer").GetComponent<Text>();
-		string mensagerOver = "" + level;
+		string mensagerOver = level + "noite";
 		levelOverGamer.text = mensagerOver;
 
 		//Desativa o GameManager.
